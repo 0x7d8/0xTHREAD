@@ -19,63 +19,15 @@ if exist TMD.TMP (
 ) else (
 	if exist T1R.CMD (
 		call T1R.CMD
-		set /A tries=%tries% + %result%
-		set /A dis=%tries% / 11
-		echo [i] [%dis%/%trie%] [PROCESSING]
+		set /A tries=%result% * 8
+		echo [i] [%tries%/%trie%] [PROCESSING]
 		del /q T1R.CMD
-	)
-	if exist T2R.CMD (
-		call T2R.CMD
-		set /A tries=%tries% + %result%
-		set /A dis=%tries% / 11
-		echo [i] [%dis%/%trie%] [PROCESSING]
-		del /q T2R.CMD
-	)
-	if exist T3R.CMD (
-		call T3R.CMD
-		set /A tries=%tries% + %result%
-		set /A dis=%tries% / 11
-		echo [i] [%dis%/%trie%] [PROCESSING]
-		del /q T3R.CMD
-	)
-	if exist T4R.CMD (
-		call T4R.CMD
-		set /A tries=%tries% + %result%
-		set /A dis=%tries% / 11
-		echo [i] [%dis%/%trie%] [PROCESSING]
-		del /q T4R.CMD
-	)
-	if exist T5R.CMD (
-		call T5R.CMD
-		set /A tries=%tries% + %result%
-		set /A dis=%tries% / 11
-		echo [i] [%dis%/%trie%] [PROCESSING]
-		del /q T5R.CMD
-	)
-	if exist T6R.CMD (
-		call T6R.CMD
-		set /A tries=%tries% + %result%
-		set /A dis=%tries% / 11
-		echo [i] [%dis%/%trie%] [PROCESSING]
-		del /q T6R.CMD
-	)
-	if exist T7R.CMD (
-		call T7R.CMD
-		set /A tries=%tries% + %result%
-		set /A dis=%tries% / 11
-		echo [i] [%dis%/%trie%] [PROCESSING]
-		del /q T7R.CMD
-	)
-	if exist T8R.CMD (
-		call T8R.CMD
-		set /A tries=%tries% + %result%
-		set /A dis=%tries% / 11
-		echo [i] [%dis%/%trie%] [PROCESSING]
-		del /q T8R.CMD
 	)
 	goto :loop
 )
 :finish
+
+echo [i] [%trie%/%trie%] [DONE]
 
 call T1R.CMD
 set /A head = %head% + %resheads%
