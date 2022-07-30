@@ -1,5 +1,5 @@
 @echo off
-title COIN TESTER
+title [8T] MASS COIN FLIPPER
 if exist 1.cmd del /q 1.cmd
 if exist 2.cmd del /q 2.cmd
 echo.
@@ -26,7 +26,7 @@ goto :loop
 :finish
 echo.
 echo [i] CALCULATING
-Powershell -ExecutionPolicy Bypass -Command "& 'C:\DATEIEN\PROGRAMMIERT\02 BATCH\MASS COIN FLIP\CALC.PS1' '%head%' '%tail%' '%trie%'
+Powershell -ExecutionPolicy Bypass -Command "& '%cd%\CALC.PS1' '%head%' '%tail%' '%trie%'
 call 1.cmd
 call 2.cmd
 echo.

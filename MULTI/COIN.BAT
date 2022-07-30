@@ -77,7 +77,7 @@ if exist TMD.TMP (del /q TMD.TMP)
 
 echo.
 echo [i] CALCULATING
-Powershell -ExecutionPolicy Bypass -Command "& 'Z:\home\robert\Schreibtisch\DATEIEN\PROGRAMMIERT\02 BATCH\MASS COIN FLIP\MULTI\CALC.PS1' '%head%' '%tail%' '%trie%'
+Powershell -ExecutionPolicy Bypass -Command "& '%cd%\CALC.PS1' '%head%' '%tail%' '%trie%'
 call 1.cmd
 call 2.cmd
 echo.
