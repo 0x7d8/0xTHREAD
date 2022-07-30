@@ -5,9 +5,10 @@ if exist 2.cmd (del /q 2.cmd)
 
 if exist TMD.TMP (del /q TMD.TMP)
 echo.
-echo [i] TRIES [X4]
+echo [i] TRIES [16+]
 set /p "trie=[:] "
 echo.
+set /A msgc=0
 set /A tries=1
 set /A head=0
 set /A tail=0
@@ -20,7 +21,8 @@ if exist TMD.TMP (
 	if exist T1R.CMD (
 		call T1R.CMD
 		set /A tries=%result% * 8
-		echo [i] [%tries%/%trie%] [PROCESSING]
+		set /A msgc=%msgc% + 1
+		echo [i] [%tries%/%trie%] [PROCESSING] MSG#%msgc%
 		del /q T1R.CMD
 	)
 	goto :loop
