@@ -1,5 +1,5 @@
 @echo off
-title [8T] MASS COIN FLIPPER
+title [1T] MASS COIN FLIPPER
 if exist 1.cmd del /q 1.cmd
 if exist 2.cmd del /q 2.cmd
 echo.
