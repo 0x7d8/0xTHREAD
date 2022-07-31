@@ -4,9 +4,20 @@ if exist 1.cmd (del /q 1.cmd)
 if exist 2.cmd (del /q 2.cmd)
 
 if exist TMD.TMP (del /q TMD.TMP)
+:tries
 echo.
 echo [i] TRIES [16+]
 set /p "trie=[:] "
+if %trie% GTR 16 (
+	goto :process
+) else (
+	echo.
+	echo [!] PLEASE ENTER A NUMBER HIGHER THAN 16
+	pause>nul
+	echo.
+	goto :tries
+)
+:process
 echo.
 set /A msgc=0
 set /A tries=1
